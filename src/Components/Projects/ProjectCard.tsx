@@ -6,7 +6,7 @@ import merngoals from "@/assets/Projects/merngoals.webp"
 import Dashbaord from "@/assets/Projects/Dashboard.webp"
 import firechat from "@/assets/Projects/firechat.webp"
 import shopihy from "@/assets/Projects/shopihy.webp"
-import Blog from "@/assets/Projects/blog.webp"
+import blog from "@/assets/Projects/blog.webp"
 import restlogo from "@/assets/restlogo.png" 
 import LandingPage from "@/assets/Projects/saiyangym.webp" 
 import booking from "@/assets/Projects/booking.webp" 
@@ -45,7 +45,7 @@ const data:Array< prop> = [
     stack:["TypeScript","ReactJS","Redux/toolkit","Vite","TailwindCSS"],
     type:'All  Featured Frontend'
   },
-  {img:Blog,
+  {img:blog,
     title: "Blog",
     description: "Blog with Authentication, Pagination and Cloudinary for image Uploading.",
     link: "https://wordsinc.netlify.app/",
