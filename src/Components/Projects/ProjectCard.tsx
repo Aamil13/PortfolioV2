@@ -6,9 +6,13 @@ import merngoals from "@/assets/Projects/merngoals.webp"
 import Dashbaord from "@/assets/Projects/Dashboard.webp"
 import firechat from "@/assets/Projects/firechat.webp"
 import shopihy from "@/assets/Projects/shopihy.webp"
-import Blog from "@/assets/Projects/Blog.webp"
+import Blog from "@/assets/Projects/blog.webp"
 import restlogo from "@/assets/restlogo.png" 
-import LandingPage from "@/assets/Projects/Landing-page.webp" 
+import LandingPage from "@/assets/Projects/saiyangym.webp" 
+import booking from "@/assets/Projects/booking.webp" 
+import codigo from "@/assets/Projects/codigo.webp" 
+import aesop from "@/assets/Projects/aesop.webp" 
+import recipe from "@/assets/Projects/dinewithus.webp" 
 import { motion } from "framer-motion"
 import {useState} from 'react'
 
@@ -24,29 +28,65 @@ type prop ={
 
 
 const data:Array< prop> = [
-    {img:Blog,
-      title: "Blog",
-      description: "Blog with Authentication, Pagination and Cloudinary for image Uploading.",
-      link: "https://wordsinc.netlify.app/",
-      git:"https://github.com/Aamil13/Blog-FrontendV1",
-      stack:["JavaScript","NodeJS","Express","Mongo","ReactJS","Redux/toolkit","MaterialUI"],
-      type:'All Fullstack Featured'
-    },
-    {img:LandingPage,
-      title: "SAIYAN GYM",
-      description: "Saiyan Gym join the intergalactic aliens in defending Earth from Freeza. ",
-      link: "https://saiyangym.netlify.app/",
-      git:"https://github.com/Aamil13/Landing",
-      stack:["TypeScript","ReactJS","Redux/toolkit","Vite","TailwindCSS"],
-      type:'All  Featured Frontend'
-    },
+  {img:booking,
+    title: "Booking-APP",
+    description: "Hotel reservation web-application",
+    link: "https://nextbookingappmern.vercel.app/",
+    git:"hhttps://github.com/Aamil13/Booking_app_Frontend",
+    stack:["Typescript","JavaScript","NodeJS","Express","Mongo","ReactJS","NextJS","Redux/toolkit","tailwindCSS"],
+    type:'All Fullstack Featured'
+  },
+ 
+  {img:LandingPage,
+    title: "SAIYAN GYM",
+    description: "Saiyan Gym join the intergalactic aliens in defending Earth from Freeza. ",
+    link: "https://saiyangym.netlify.app/",
+    git:"https://github.com/Aamil13/Landing",
+    stack:["TypeScript","ReactJS","Redux/toolkit","Vite","TailwindCSS"],
+    type:'All  Featured Frontend'
+  },
+  {img:Blog,
+    title: "Blog",
+    description: "Blog with Authentication, Pagination and Cloudinary for image Uploading.",
+    link: "https://wordsinc.netlify.app/",
+    git:"https://github.com/Aamil13/Blog-FrontendV1",
+    stack:["JavaScript","NodeJS","Express","Mongo","ReactJS","Redux/toolkit","MaterialUI"],
+    type:'All Fullstack Featured'
+  },
+  {img:recipe,
+    title: "Recipe App",
+    description: "Recipe sharing website with image upload.",
+    link: "https://steady-phoenix-feaa2b.netlify.app/",
+    git:"https://github.com/Aamil13/Fleska-Frontend",
+    stack:["Typescript","NodeJS","Express","Mongo","ReactJS","Redux/toolkit","tailwindCSS"],
+    type:'All Fullstack Featured'
+  },
+  {img:codigo,
+    title: "Service Landing Page",
+    description: "Landing page for service providers.",
+    link: "https://preeminent-jalebi-838daa.netlify.app/",
+    git:"https://github.com/Aamil13/Codigo",
+    stack:["JavaScript","ReactJS","tailwindCSS","DaisyUI"],
+    type:'All  Featured Frontend'
+  },
+
+  {img:aesop,
+    title: "Product Landing page",
+    description: "A Landing page for products with complex carousels.",
+    link: "https://ae-land.vercel.app/",
+    git:"https://github.com/Aamil13/AeLand",
+    stack:["TypeScript","ReactJS","tailwindCSS","DaisyUI"],
+    type:'All  Featured Frontend'
+  },
+ 
+   
     {img:shopihy,
       title: "E-commerce",
       description: "E-commerce website with pagination, shopping and filtration",
       link: "https://shopihy.netlify.app/",
       git:"https://github.com/Aamil13/Shopihy2",
       stack:["JavaScript","NodeJS","Express","ReactJS","Redux/toolkit","Bootstrap"],
-      type:'All Fullstack Featured'
+      type:'All Fullstack '
     },
 
     {img:firechat,
@@ -55,7 +95,7 @@ const data:Array< prop> = [
       link: "https://firechat122.netlify.app/",
       git: "https://github.com/Aamil13/Chat-app-fb",
       stack:["JavaScript","ReactJS","Bootstrap","Firebase"],
-      type:'All Frontend Featured'
+      type:'All Frontend '
     },
     {img:restlogo,
       title: "REST API",
@@ -80,7 +120,7 @@ const data:Array< prop> = [
       link: "https://dapper-chimera-d38628.netlify.app/",
       git:"https://github.com/Aamil13/GlassDashboard",
         stack:["JavaScript","ReactJS","SCSS","FramerMotion"],
-        type:'All Frontend'
+        type:'All Frontend Featured'
     },
     {img:merngoals,
       title: "Full-Stack Goal App",
@@ -117,17 +157,18 @@ const ProjectCard = ({filterstack}:props) => {
    
     className="flex flex-wrap justify-center gap-10 my-5">
         {data.filter((stack)=>stack.type.includes(filterstack)).map((item,key)=>(
-            <motion.div key={key} className='glasss relative z-30  overflow-hidden hover:scale-105 transition-all duration-150 ease-in hover:shadow-xl w-96 h-80 max-sm:w-11/12 max-sm:h-96 flex flex-col items-center p-2 '>
-            <img className="w-11/12 h-2/3 " src={item.img} alt="" />
+            <motion.div key={key} className='glasss relative z-30  overflow-hidden hover:scale-105 transition-all duration-150 ease-in hover:shadow-xl w-96 h-80 max-sm:w-11/12 max-sm:h-96 flex flex-col items-center justify-between p-2 '>
+            <img className="absolute -z-10 " src={item.img} alt="" />
+            
             <div className="flex justify-between items-center w-full p-4">
-            <p className="font-bold text-white text-2xl">{item.title}</p>
+            {/* <p className="font-bold text-purple-900 text-start text-2xl">{item.title}</p> */}
             <div className="flex items-center gap-3">
               <a href={item.git} target="_blank">
-              <img className="w-6 h-6 rounded-full hover:animate-pulse cursor-pointer" src={git} alt="" />
+              <img className="w-6 h-6 rounded-full animate-pulse cursor-pointer" src={git} alt="" />
 
               </a>
             <a href={item.link} target="_blank">
-            <ArrowTopRightOnSquareIcon className="w-6 h-6 hover:animate-pulse bg-white rounded-full p-1 cursor-pointer"/>
+            <ArrowTopRightOnSquareIcon className="w-6 h-6 animate-pulse bg-white rounded-full p-1 cursor-pointer"/>
 
             </a>
             <span onClick={()=>setDiscriptiontTrue({state:true,index:key})} className="cursor-pointer bg-white w-6 h-6 text-center font-bold rounded-full">?</span>
